@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         nunito: ["Nunito", "system-ui", "sans-serif"],
+        quicksand: ["Quicksand", "system-ui", "sans-serif"],
       },
       animation: {
         "grass-wave": "grassWave 2.2s ease-in-out infinite",
