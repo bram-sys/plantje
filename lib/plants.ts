@@ -98,7 +98,7 @@ export const plants: Plant[] = [
     name: "Orchidee",
     emoji: "🪷",
     description: "Exotisch & bijzonder",
-    shape: "cup",
+    shape: "iris",
     colors: { petal: "#c060d0", petal2: "#e080f0", center: "#fff0ff", center2: "#f8d8ff", stem: "#4a8a28", leaf: "#5a9a30", leaf2: "#6aaa40" },
   },
   {
@@ -251,12 +251,12 @@ export const plants: Plant[] = [
   { id: "klimroos",     name: "Klimroos",       emoji: "🌹", description: "Klimt & bloeit",          shape: "rose",        colors: { petal: "#f06840", petal2: "#f89870", center: "#f8e050", center2: "#e0c830", stem: "#4a7828", leaf: "#5a8830", leaf2: "#6a9838" } },
 
   // Cup-familie
-  { id: "anemoon",      name: "Anemoon",        emoji: "🌺", description: "Vurig & intens",          shape: "cup",         colors: { petal: "#d82820", petal2: "#f05048", center: "#181008", center2: "#281808", stem: "#4a7828", leaf: "#5a8830", leaf2: "#6a9838" } },
-  { id: "sleutelbloem", name: "Sleutelbloem",   emoji: "🌼", description: "Eerste lentebode",        shape: "cup",         colors: { petal: "#f8e040", petal2: "#f0d020", center: "#f0a810", center2: "#d89008", stem: "#508030", leaf: "#609040", leaf2: "#70a048" } },
-  { id: "clematis",     name: "Clematis",       emoji: "💜", description: "Klimt & bloeit",          shape: "cup",         colors: { petal: "#7048c0", petal2: "#9068d8", center: "#f8f0ff", center2: "#e8d8f8", stem: "#4a7828", leaf: "#5a8830", leaf2: "#6a9838" } },
-  { id: "waterlelie",   name: "Waterlelie",     emoji: "🤍", description: "Drijvend & dromerig",     shape: "cup",         colors: { petal: "#f8f0f8", petal2: "#f0e0f0", center: "#f8e850", center2: "#e0c830", stem: "#488038", leaf: "#588840", leaf2: "#68a048" } },
-  { id: "narcis",       name: "Narcis",         emoji: "🌼", description: "Vrolijke lentegroet",     shape: "cup",         colors: { petal: "#f8f040", petal2: "#f0e820", center: "#e87010", center2: "#d06008", stem: "#508030", leaf: "#609040", leaf2: "#70a050" } },
-  { id: "strelitzia",   name: "Strelitzia",     emoji: "🌺", description: "Paradijsvogelbloem",      shape: "cup",         colors: { petal: "#f07820", petal2: "#f0a840", center: "#2040b0", center2: "#3050c0", stem: "#488030", leaf: "#588840", leaf2: "#68a050" } },
+  { id: "anemoon",      name: "Anemoon",        emoji: "🌺", description: "Vurig & intens",          shape: "poppy",         colors: { petal: "#d82820", petal2: "#f05048", center: "#181008", center2: "#281808", stem: "#4a7828", leaf: "#5a8830", leaf2: "#6a9838" } },
+  { id: "sleutelbloem", name: "Sleutelbloem",   emoji: "🌼", description: "Eerste lentebode",        shape: "daisy",         colors: { petal: "#f8e040", petal2: "#f0d020", center: "#f0a810", center2: "#d89008", stem: "#508030", leaf: "#609040", leaf2: "#70a048" } },
+  { id: "clematis",     name: "Clematis",       emoji: "💜", description: "Klimt & bloeit",          shape: "daisy",         colors: { petal: "#7048c0", petal2: "#9068d8", center: "#f8f0ff", center2: "#e8d8f8", stem: "#4a7828", leaf: "#5a8830", leaf2: "#6a9838" } },
+  { id: "waterlelie",   name: "Waterlelie",     emoji: "🤍", description: "Drijvend & dromerig",     shape: "peony",         colors: { petal: "#f8f0f8", petal2: "#f0e0f0", center: "#f8e850", center2: "#e0c830", stem: "#488038", leaf: "#588840", leaf2: "#68a048" } },
+  { id: "narcis",       name: "Narcis",         emoji: "🌼", description: "Vrolijke lentegroet",     shape: "trumpet",     colors: { petal: "#f8f040", petal2: "#f0e820", center: "#e87010", center2: "#d06008", stem: "#508030", leaf: "#609040", leaf2: "#70a050" } },
+  { id: "strelitzia",   name: "Strelitzia",     emoji: "🌺", description: "Paradijsvogelbloem",      shape: "trumpet",         colors: { petal: "#f07820", petal2: "#f0a840", center: "#2040b0", center2: "#3050c0", stem: "#488030", leaf: "#588840", leaf2: "#68a050" } },
 
   // Spike-familie & kruiden
   { id: "lupine",       name: "Lupine",         emoji: "💜", description: "Trots & hoog",            shape: "spike",       colors: { petal: "#6040b8", petal2: "#8060d0", center: "#f8f0ff", center2: "#e8e0f8", stem: "#4a8030", leaf: "#5a9038", leaf2: "#6aa040" } },
@@ -276,7 +276,7 @@ export const plants: Plant[] = [
   // Blossom (takjes)
   { id: "jasmijn",      name: "Jasmijn",        emoji: "🤍", description: "Zoete geur",              shape: "blossom",     colors: { petal: "#fffff0", petal2: "#ffffd8", center: "#f8e840", center2: "#e0d020", stem: "#8a7850", leaf: "#6a9840", leaf2: "#78a850" } },
   { id: "appelbloesem", name: "Appelbloesem",   emoji: "🌸", description: "Lente op z'n best",       shape: "blossom",     colors: { petal: "#ffd8e0", petal2: "#ffe8ec", center: "#f8e840", center2: "#e0c820", stem: "#9a7858", leaf: "#6a9840", leaf2: "#78a850" } },
-  { id: "mimosa",       name: "Mimosa",         emoji: "💛", description: "Geel & pluizig",          shape: "blossom",     colors: { petal: "#f8e040", petal2: "#f0d828", center: "#e8b818", center2: "#d0a010", stem: "#8a7838", leaf: "#7a9838", leaf2: "#88a840" } },
+  { id: "mimosa",       name: "Mimosa",         emoji: "💛", description: "Geel & pluizig",          shape: "allium",     colors: { petal: "#f8e040", petal2: "#f0d828", center: "#e8b818", center2: "#d0a010", stem: "#8a7838", leaf: "#7a9838", leaf2: "#88a840" } },
 
   // Bell (klokjes)
   { id: "vingerhoedskruid", name: "Vingerhoedskruid", emoji: "🌸", description: "Hoog & gespikkeld", shape: "bell",      colors: { petal: "#c060c8", petal2: "#d880d8", center: "#f8f0ff", center2: "#f0d8f8", stem: "#4a8228", leaf: "#5a9230", leaf2: "#6aa238" } },

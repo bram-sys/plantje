@@ -206,19 +206,21 @@ function CupFlowerStage2({ c }: { c: Plant["colors"] }) {
 
 function CupFlowerStage3({ c }: { c: Plant["colors"] }) {
   const fx = 100, fy = 148;
-
   return (
     <>
       <Soil />
       <StemFull color={c.stem} />
       <LeavesStage3 leaf={c.leaf} leaf2={c.leaf2} />
-      {/* 3 outer petals (open cup) */}
+      {/* Back 3 tepals peeking behind front layer */}
+      <path d={`M${fx},${fy + 8} C${fx - 40},${fy + 2} ${fx - 44},${fy - 26} ${fx - 20},${fy - 56} L${fx},${fy + 8}`} fill={c.petal2} opacity="0.58" />
+      <path d={`M${fx},${fy + 8} C${fx + 40},${fy + 2} ${fx + 44},${fy - 26} ${fx + 20},${fy - 56} L${fx},${fy + 8}`} fill={c.petal2} opacity="0.58" />
+      <path d={`M${fx - 12},${fy + 7} C${fx - 12},${fy - 22} ${fx},${fy - 66} ${fx + 12},${fy + 7}`} fill={c.petal2} opacity="0.52" />
+      {/* Front 3 tepals */}
       <path d={`M${fx},${fy + 10} C${fx - 32},${fy - 2} ${fx - 34},${fy - 28} ${fx - 14},${fy - 48} C${fx - 8},${fy - 56} ${fx},${fy - 60} ${fx},${fy - 60} L${fx},${fy + 10}`} fill={c.petal} />
       <path d={`M${fx},${fy + 10} C${fx + 32},${fy - 2} ${fx + 34},${fy - 28} ${fx + 14},${fy - 48} C${fx + 8},${fy - 56} ${fx},${fy - 60} ${fx},${fy - 60} L${fx},${fy + 10}`} fill={c.petal} />
-      {/* Center back petal */}
-      <path d={`M${fx - 10},${fy + 6} C${fx - 8},${fy - 18} ${fx},${fy - 62} ${fx + 10},${fy + 6}`} fill={c.petal2} opacity="0.75" />
-      {/* Inner shading */}
-      <path d={`M${fx - 10},${fy + 8} C${fx - 8},${fy - 10} ${fx},${fy - 55} ${fx + 10},${fy + 8}`} fill={c.petal2} opacity="0.4" />
+      <path d={`M${fx - 10},${fy + 6} C${fx - 8},${fy - 18} ${fx},${fy - 62} ${fx + 10},${fy + 6}`} fill={c.petal2} opacity="0.85" />
+      {/* Inner cup shading */}
+      <path d={`M${fx - 22},${fy + 6} C${fx - 16},${fy - 14} ${fx},${fy - 42} ${fx + 22},${fy + 6}`} fill={c.center2} opacity="0.18" />
       {/* Stamens */}
       {[-6, 0, 6].map((xo, i) => (
         <g key={i}>
@@ -257,7 +259,7 @@ function SpikeStage3({ c }: { c: Plant["colors"] }) {
       <StemFull color={c.stem} />
       <LeavesStage3 leaf={c.leaf} leaf2={c.leaf2} />
       {/* Spike body */}
-      <path d={`M${spikeCx - 5},${spikeBottom} Q${spikeCx - 4},${spikeBottom - 30} ${spikeCx},${spikeBottom - 64} Q${spikeCx + 4},${spikeBottom - 30} ${spikeCx + 5},${spikeBottom}`} fill={c.petal} opacity="0.2" />
+      <path d={`M${spikeCx - 5},${spikeBottom} Q${spikeCx - 4},${spikeBottom - 30} ${spikeCx},${spikeBottom - 64} Q${spikeCx + 4},${spikeBottom - 30} ${spikeCx + 5},${spikeBottom}`} fill={c.petal} opacity="0.4" />
       {/* Individual florets */}
       {Array.from({ length: 22 }).map((_, i) => {
         const y = spikeBottom - i * 2.9;
@@ -1250,7 +1252,7 @@ function TrumpetStage3({ c }: { c: Plant["colors"] }) {
       })}
       {Array.from({ length: 5 }).map((_, i) => {
         const a = (i / 5) * Math.PI * 2 - Math.PI / 2;
-        return <line key={i} x1={fx} y1={fy} x2={fx + Math.cos(a) * 20} y2={fy + Math.sin(a) * 18} stroke={c.petal2} strokeWidth="1.2" opacity="0.35" />;
+        return <line key={i} x1={fx} y1={fy} x2={fx + Math.cos(a) * 28} y2={fy + Math.sin(a) * 25} stroke={c.petal2} strokeWidth="1.5" opacity="0.45" />;
       })}
       <circle cx={fx} cy={fy} r="13" fill={c.center} opacity="0.65" />
       <circle cx={fx} cy={fy} r="8" fill="white" opacity="0.45" />
