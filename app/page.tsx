@@ -185,6 +185,9 @@ export default function Home() {
                   }`}>
                     {STAGE_LABELS[stage]}
                   </span>
+                  {selectedPlant.fact && (
+                    <p className="text-stone-400 text-xs mt-2 text-center italic leading-snug px-2">💡 {selectedPlant.fact}</p>
+                  )}
                 </div>
               </>
             ) : (

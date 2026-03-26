@@ -33,12 +33,13 @@ export default function PlantPicker({ plants, onSelect }: Props) {
         </div>
 
         {/* Preview */}
-        <div className="flex flex-col items-center py-4 min-h-[180px]">
+        <div className="flex flex-col items-center py-4 min-h-[220px]">
           {previewPlant ? (
             <div className="animate-fade-in flex flex-col items-center">
               <PlantSVG plant={previewPlant} stage={0} size={130} animate={false} />
               <p className="font-bold text-stone-700 text-lg mt-1 drop-shadow-sm">{previewPlant.name}</p>
               <p className="text-stone-500 text-sm">{previewPlant.description}</p>
+              <p className="text-stone-400 text-xs mt-2 text-center max-w-[220px] italic leading-snug">💡 {previewPlant.fact}</p>
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center h-40 opacity-40">
