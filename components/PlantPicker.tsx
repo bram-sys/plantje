@@ -27,7 +27,7 @@ export default function PlantPicker({ plants, onSelect }: Props) {
 
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Sticky header + preview */}
-        <div className="sticky top-0 z-20 bg-gradient-to-b from-[#eef7e4] via-[#eef7e4]/95 to-transparent pb-2">
+        <div className="sticky top-0 z-20 bg-[#eef7e4] pb-2">
           {/* Header */}
           <div className="px-5 pt-8 pb-2">
             <h1 className="text-2xl font-extrabold text-stone-700 tracking-tight drop-shadow-sm">vandaag</h1>
@@ -53,7 +53,7 @@ export default function PlantPicker({ plants, onSelect }: Props) {
         </div>
 
         {/* Plant grid */}
-        <div className="flex-1 overflow-y-auto px-4 pb-36">
+        <div className="flex-1 overflow-y-auto px-4 pb-36 pt-2">
           <div className="grid grid-cols-4 gap-2">
             {plants.map((plant) => {
               const isSelected = selected === plant.id;
