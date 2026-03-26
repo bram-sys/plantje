@@ -26,27 +26,30 @@ export default function PlantPicker({ plants, onSelect }: Props) {
       <GardenBackground />
 
       <div className="relative z-10 flex flex-col min-h-screen">
-        {/* Header */}
-        <div className="px-5 pt-8 pb-4">
-          <h1 className="text-2xl font-extrabold text-stone-700 tracking-tight drop-shadow-sm">vandaag</h1>
-          <p className="text-stone-600 mt-0.5 text-sm font-medium drop-shadow-sm">kies je plantje voor vandaag</p>
-        </div>
+        {/* Sticky header + preview */}
+        <div className="sticky top-0 z-20 bg-gradient-to-b from-[#eef7e4] via-[#eef7e4]/95 to-transparent pb-2">
+          {/* Header */}
+          <div className="px-5 pt-8 pb-2">
+            <h1 className="text-2xl font-extrabold text-stone-700 tracking-tight drop-shadow-sm">vandaag</h1>
+            <p className="text-stone-600 mt-0.5 text-sm font-medium drop-shadow-sm">kies je plantje voor vandaag</p>
+          </div>
 
-        {/* Preview */}
-        <div className="flex flex-col items-center py-4 min-h-[220px]">
-          {previewPlant ? (
-            <div className="animate-fade-in flex flex-col items-center">
-              <PlantSVG plant={previewPlant} stage={0} size={130} animate={false} />
-              <p className="font-bold text-stone-700 text-lg mt-1 drop-shadow-sm">{previewPlant.name}</p>
-              <p className="text-stone-500 text-sm">{previewPlant.description}</p>
-              <p className="text-stone-400 text-xs mt-2 text-center max-w-[220px] italic leading-snug">💡 {previewPlant.fact}</p>
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center h-40 opacity-40">
-              <span className="text-5xl">🌱</span>
-              <p className="text-stone-500 text-sm mt-2">tik op een plantje</p>
-            </div>
-          )}
+          {/* Preview */}
+          <div className="flex flex-col items-center py-2 min-h-[220px]">
+            {previewPlant ? (
+              <div className="animate-fade-in flex flex-col items-center">
+                <PlantSVG plant={previewPlant} stage={3} size={130} animate={false} />
+                <p className="font-bold text-stone-700 text-lg mt-1 drop-shadow-sm">{previewPlant.name}</p>
+                <p className="text-stone-500 text-sm">{previewPlant.description}</p>
+                <p className="text-stone-400 text-xs mt-2 text-center max-w-[220px] italic leading-snug">💡 {previewPlant.fact}</p>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-40 opacity-40">
+                <span className="text-5xl">🌱</span>
+                <p className="text-stone-500 text-sm mt-2">tik op een plantje</p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Plant grid */}
