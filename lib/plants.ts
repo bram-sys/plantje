@@ -17,6 +17,7 @@ export type PlantShape =
   | "allium"
   | "cone"
   | "umbrella"
+  | "lily"
   | "cactus"
   | "succulent"
   | "bamboo"
@@ -115,7 +116,7 @@ export const plants: Plant[] = [
     emoji: "⚪",
     description: "Elegant & puur",
     fact: "In het oude Egypte stond de lelie symbool voor vruchtbaarheid en zuiverheid.",
-    shape: "cup",
+    shape: "lily",
     colors: { petal: "#fff5e0", petal2: "#ffe8c8", center: "#f5a830", center2: "#e09020", stem: "#4a8a28", leaf: "#5a9a30", leaf2: "#6aaa40" },
   },
   {
@@ -266,7 +267,7 @@ export const plants: Plant[] = [
   { id: "rudbeckia",    name: "Rudbeckia",      emoji: "🌻", description: "Geel met donker hart",    fact: "Rudbeckia wordt ook 'Black-eyed Susan' genoemd, naar een oud Amerikaans volksversje.",      shape: "sunflower",   colors: { petal: "#e8b820", petal2: "#f0c828", center: "#3a2010", center2: "#2a1408", stem: "#508038", leaf: "#5a9040", leaf2: "#68a048" } },
 
   // Vol & gelaagd
-  { id: "zinnia",       name: "Zinnia",         emoji: "🌺", description: "Kleurexplosie",           fact: "Zinnia's waren de eerste bloemen die in de ruimte bloeiden — op de ISS in 2016!",           shape: "peony",       colors: { petal: "#e84020", petal2: "#f06840", center: "#f8d020", center2: "#e0b010", stem: "#4a8828", leaf: "#5a9830", leaf2: "#6aaa38" } },
+  { id: "zinnia",       name: "Zinnia",         emoji: "🌺", description: "Kleurexplosie",           fact: "Zinnia's waren de eerste bloemen die in de ruimte bloeiden — op de ISS in 2016!",           shape: "dahlia_flower",       colors: { petal: "#e84020", petal2: "#f06840", center: "#f8d020", center2: "#e0b010", stem: "#4a8828", leaf: "#5a9830", leaf2: "#6aaa38" } },
   { id: "ranonkel",     name: "Ranonkel",       emoji: "🌼", description: "Vol & botergeel",         fact: "Al eeuwenlang houden kinderen een ranonkel onder je kin: geel = je houdt van boter.",       shape: "peony",       colors: { petal: "#f8d840", petal2: "#f8e868", center: "#e8a820", center2: "#d09010", stem: "#4a8a28", leaf: "#5a9a30", leaf2: "#6aaa40" } },
 
   // Roos-familie
@@ -292,9 +293,9 @@ export const plants: Plant[] = [
   { id: "liatris",      name: "Liatris",        emoji: "💜", description: "Pluimachtig & fuchsia",   fact: "Liatris is uniek: hij bloeit van boven naar beneden, niet van onder naar boven.",           shape: "spike",       colors: { petal: "#c040a0", petal2: "#d860b8", center: "#e060b0", center2: "#c848a0", stem: "#4a7a30", leaf: "#5a8a38", leaf2: "#6a9a40" } },
 
   // Hydrangea/cluster
-  { id: "sering",       name: "Sering",         emoji: "💜", description: "Lentegeur",               fact: "Een sering kan meer dan 150 jaar leven en elk jaar rijker bloeien.",                        shape: "hydrangea",   colors: { petal: "#9060c0", petal2: "#b080d8", center: "#f8f0ff", center2: "#e8d8f8", stem: "#507030", leaf: "#608040", leaf2: "#70a050" } },
-  { id: "blauweregen",  name: "Blauweregen",    emoji: "💙", description: "Hangt & bloeit",          fact: "Blauweregen kan zo zwaar worden dat hij een pergola doet instorten.",                       shape: "hydrangea",   colors: { petal: "#5870d0", petal2: "#7890e0", center: "#e8f0ff", center2: "#d0d8f0", stem: "#5a6830", leaf: "#687838", leaf2: "#788840" } },
-  { id: "vlinderstruik", name: "Vlinderstruik", emoji: "💜", description: "Vlinders houden ervan",   fact: "Eén vlinderstruik trekt in één zomer meer dan honderd vlinders aan.",                      shape: "hydrangea",   colors: { petal: "#5030a0", petal2: "#7050b8", center: "#f8e8ff", center2: "#e8d0f8", stem: "#4a7030", leaf: "#5a8038", leaf2: "#6a9040" } },
+  { id: "sering",       name: "Sering",         emoji: "💜", description: "Lentegeur",               fact: "Een sering kan meer dan 150 jaar leven en elk jaar rijker bloeien.",                        shape: "spike",   colors: { petal: "#9060c0", petal2: "#b080d8", center: "#f8f0ff", center2: "#e8d8f8", stem: "#507030", leaf: "#608040", leaf2: "#70a050" } },
+  { id: "blauweregen",  name: "Blauweregen",    emoji: "💙", description: "Hangt & bloeit",          fact: "Blauweregen kan zo zwaar worden dat hij een pergola doet instorten.",                       shape: "spike",   colors: { petal: "#5870d0", petal2: "#7890e0", center: "#e8f0ff", center2: "#d0d8f0", stem: "#5a6830", leaf: "#687838", leaf2: "#788840" } },
+  { id: "vlinderstruik", name: "Vlinderstruik", emoji: "💜", description: "Vlinders houden ervan",   fact: "Eén vlinderstruik trekt in één zomer meer dan honderd vlinders aan.",                      shape: "spike",   colors: { petal: "#5030a0", petal2: "#7050b8", center: "#f8e8ff", center2: "#e8d0f8", stem: "#4a7030", leaf: "#5a8038", leaf2: "#6a9040" } },
   { id: "verbena",      name: "Verbena",        emoji: "🌸", description: "Klein & kleurrijk",       fact: "Verbena gold in de oudheid als heilige plant bij offers aan de goden.",                     shape: "hydrangea",   colors: { petal: "#d04080", petal2: "#e86098", center: "#f8f0ff", center2: "#f0d8f8", stem: "#5a8030", leaf: "#6a9038", leaf2: "#7aa040" } },
 
   // Blossom (takjes)
@@ -306,7 +307,7 @@ export const plants: Plant[] = [
   { id: "vingerhoedskruid", name: "Vingerhoedskruid", emoji: "🌸", description: "Hoog & gespikkeld", fact: "Vingerhoedskruid is giftig, maar leverde wel het hartmedicijn digitalis op.",             shape: "bell",      colors: { petal: "#c060c8", petal2: "#d880d8", center: "#f8f0ff", center2: "#f0d8f8", stem: "#4a8228", leaf: "#5a9230", leaf2: "#6aa238" } },
   { id: "hyacint",      name: "Hyacint",        emoji: "💜", description: "Lekker ruikend",          fact: "Hyacinten lagen in de 17e eeuw zo in trek dat er bijna een 'hyacintenbubbel' ontstond.",   shape: "bell",        colors: { petal: "#6040b0", petal2: "#8060c8", center: "#f0e8ff", center2: "#e0d0f8", stem: "#508038", leaf: "#608848", leaf2: "#70a050" } },
   { id: "boshyacint",   name: "Boshyacint",     emoji: "💙", description: "Blauwe bosgrond",         fact: "In Engeland is het pluken van boshyacinten in beschermde bossen strafbaar.",               shape: "bell",        colors: { petal: "#3860c8", petal2: "#5080d8", center: "#e8f0ff", center2: "#d0d8f0", stem: "#4a7830", leaf: "#5a8838", leaf2: "#6a9840" } },
-  { id: "freesia",      name: "Freesia",        emoji: "🌼", description: "Fris & geurig",           fact: "Freesia is vernoemd naar Friedrich Freese, een arts die ze zelf nooit heeft ontdekt.",     shape: "bell",        colors: { petal: "#f8e040", petal2: "#f8f060", center: "#f0a818", center2: "#e09010", stem: "#508838", leaf: "#609848", leaf2: "#70a850" } },
+  { id: "freesia",      name: "Freesia",        emoji: "🌼", description: "Fris & geurig",           fact: "Freesia is vernoemd naar Friedrich Freese, een arts die ze zelf nooit heeft ontdekt.",     shape: "trumpet",        colors: { petal: "#f8e040", petal2: "#f8f060", center: "#f0a818", center2: "#e09010", stem: "#508838", leaf: "#609848", leaf2: "#70a850" } },
   { id: "gladiool",     name: "Gladiool",       emoji: "🌸", description: "Trots & opvallend",       fact: "Gladiool komt van het Latijnse 'gladius' (zwaard) — vanwege de bladvorm.",                 shape: "bell",        colors: { petal: "#f04880", petal2: "#f878a8", center: "#f8e8f0", center2: "#f0d0e0", stem: "#4a8030", leaf: "#5a9038", leaf2: "#6aa040" } },
   { id: "leeuwebek",    name: "Leeuwebek",      emoji: "🌸", description: "Grappig & vrolijk",       fact: "Gedroogde zaaddozen van leeuwebek lijken op schedeltjes — geliefd bij Middeleewse kinderen.", shape: "bell",      colors: { petal: "#f05818", petal2: "#f08040", center: "#f8f0d8", center2: "#f0e0b8", stem: "#4a8228", leaf: "#5a9230", leaf2: "#6aa238" } },
 

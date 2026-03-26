@@ -1210,7 +1210,67 @@ function BellStage3({ c }: { c: Plant["colors"] }) {
   );
 }
 
-// ─── Trumpet (morning glory / petunia) ───────────────────────────────────────
+// ─── Lily (6 reflexed petals, open star) ─────────────────────────────────────
+
+function LilyStage2({ c }: { c: Plant["colors"] }) {
+  const fx = 100, fy = 150;
+  return (
+    <>
+      <Soil />
+      <StemMedium color={c.stem} />
+      <LeavesStage2 leaf={c.leaf} leaf2={c.leaf2} />
+      {/* 6 petals slightly open */}
+      {Array.from({ length: 6 }).map((_, i) => {
+        const a = (i / 6) * Math.PI * 2;
+        const cx = fx + Math.sin(a) * 12, cy = fy - Math.cos(a) * 10;
+        const deg = (i / 6) * 360;
+        return <ellipse key={i} cx={cx} cy={cy} rx="8" ry="16" fill={i % 2 === 0 ? c.petal : c.petal2} opacity="0.85" transform={`rotate(${deg} ${cx} ${cy})`} />;
+      })}
+      <circle cx={fx} cy={fy} r="7" fill={c.center} opacity="0.9" />
+    </>
+  );
+}
+
+function LilyStage3({ c }: { c: Plant["colors"] }) {
+  const fx = 100, fy = 136;
+  return (
+    <>
+      <Soil />
+      <StemFull color={c.stem} />
+      <LeavesStage3 leaf={c.leaf} leaf2={c.leaf2} />
+      {/* 6 broad reflexed petals spreading wide and curving back */}
+      {Array.from({ length: 6 }).map((_, i) => {
+        const a = (i / 6) * Math.PI * 2;
+        const tipX = fx + Math.sin(a) * 38;
+        const tipY = fy - Math.cos(a) * 30;
+        const midX = fx + Math.sin(a) * 28;
+        const midY = fy - Math.cos(a) * 18 + 6; // slight droop at tip
+        return (
+          <path key={i}
+            d={`M${fx + Math.sin(a) * 8},${fy - Math.cos(a) * 6}
+                Q${fx + Math.sin(a) * 22},${fy - Math.cos(a) * 22 + 4}
+                  ${tipX},${tipY + 8}`}
+            stroke={i % 2 === 0 ? c.petal : c.petal2}
+            strokeWidth="10" fill="none" strokeLinecap="round" opacity={i % 2 === 0 ? 0.9 : 0.78}
+          />
+        );
+      })}
+      {/* Center with prominent stamens */}
+      <circle cx={fx} cy={fy} r="9" fill={c.center} opacity="0.85" />
+      {Array.from({ length: 6 }).map((_, i) => {
+        const a = (i / 6) * Math.PI * 2;
+        return (
+          <g key={i}>
+            <line x1={fx} y1={fy} x2={fx + Math.sin(a) * 18} y2={fy - Math.cos(a) * 14} stroke={c.center2} strokeWidth="1.4" opacity="0.9" />
+            <circle cx={fx + Math.sin(a) * 18} cy={fy - Math.cos(a) * 14} r="2.5" fill={c.center2} />
+          </g>
+        );
+      })}
+    </>
+  );
+}
+
+// ─── Trumpet (morning glory / petunia / narcis) ───────────────────────────────
 
 function TrumpetStage2({ c }: { c: Plant["colors"] }) {
   const fx = 100, fy = 152;
@@ -1382,37 +1442,50 @@ function ConeStage2({ c }: { c: Plant["colors"] }) {
       <Soil />
       <StemMedium color={c.stem} />
       <LeavesStage2 leaf={c.leaf} leaf2={c.leaf2} />
-      {Array.from({ length: 8 }).map((_, i) => {
-        const a = (i / 8) * Math.PI * 2;
-        const cx = fx + Math.sin(a) * 18, cy = fy - Math.cos(a) * 16 + 4;
-        const deg = (i / 8) * 360 + 15;
-        return <ellipse key={i} cx={cx} cy={cy} rx="4.5" ry="13" fill={c.petal} opacity="0.8" transform={`rotate(${deg} ${cx} ${cy})`} />;
+      {/* Drooping ray petals — tips point outward and downward */}
+      {Array.from({ length: 10 }).map((_, i) => {
+        const a = (i / 10) * Math.PI * 2;
+        const tipX = fx + Math.sin(a) * 26;
+        const tipY = fy + Math.abs(Math.cos(a)) * 10 + Math.cos(a) * 6 + 8;
+        return (
+          <path key={i}
+            d={`M${fx + Math.sin(a) * 9},${fy + 2} Q${tipX * 0.6 + fx * 0.4},${tipY - 8} ${tipX},${tipY}`}
+            stroke={c.petal} strokeWidth="5" fill="none" strokeLinecap="round" opacity="0.88"
+          />
+        );
       })}
-      <ellipse cx={fx} cy={fy - 2} rx="11" ry="9" fill={c.center} />
-      <ellipse cx={fx} cy={fy - 4} rx="7" ry="5.5" fill={c.center2} />
+      <ellipse cx={fx} cy={fy - 2} rx="12" ry="10" fill={c.center} />
+      <ellipse cx={fx} cy={fy - 4} rx="8" ry="6.5" fill={c.center2} />
     </>
   );
 }
 
 function ConeStage3({ c }: { c: Plant["colors"] }) {
-  const fx = 100, fy = 148;
+  const fx = 100, fy = 144;
   return (
     <>
       <Soil />
       <StemFull color={c.stem} />
       <LeavesStage3 leaf={c.leaf} leaf2={c.leaf2} />
+      {/* Drooping ray petals — characteristic echinacea reflex downward */}
       {Array.from({ length: 14 }).map((_, i) => {
         const a = (i / 14) * Math.PI * 2;
-        const cx = fx + Math.sin(a) * 26, cy = fy - Math.cos(a) * 22 + 8;
-        const deg = (i / 14) * 360 + 18;
-        return <ellipse key={i} cx={cx} cy={cy} rx="5" ry="19" fill={c.petal} opacity="0.85" transform={`rotate(${deg} ${cx} ${cy})`} />;
+        const tipX = fx + Math.sin(a) * 38;
+        const tipY = fy + Math.abs(Math.cos(a)) * 14 + Math.cos(a) * 6 + 16;
+        return (
+          <path key={i}
+            d={`M${fx + Math.sin(a) * 12},${fy + 4} Q${tipX * 0.55 + fx * 0.45},${tipY - 12} ${tipX},${tipY}`}
+            stroke={c.petal} strokeWidth="6.5" fill="none" strokeLinecap="round" opacity="0.88"
+          />
+        );
       })}
-      <ellipse cx={fx} cy={fy - 5} rx="18" ry="14" fill={c.center} />
-      <ellipse cx={fx} cy={fy - 8} rx="13" ry="10" fill={c.center2} />
-      {Array.from({ length: 18 }).map((_, i) => {
-        const a = (i / 18) * Math.PI * 2;
-        const r = 7 + (i % 2) * 4;
-        return <circle key={i} cx={fx + Math.sin(a) * r * 0.85} cy={fy - 8 - Math.cos(a) * r * 0.65} r="1.4" fill={c.center} opacity="0.55" />;
+      {/* Prominent domed center cone */}
+      <ellipse cx={fx} cy={fy - 4} rx="18" ry="15" fill={c.center} />
+      <ellipse cx={fx} cy={fy - 7} rx="13" ry="10" fill={c.center2} />
+      {Array.from({ length: 20 }).map((_, i) => {
+        const a = (i / 20) * Math.PI * 2;
+        const r = 5 + (i % 3) * 3.5;
+        return <circle key={i} cx={fx + Math.sin(a) * r * 0.82} cy={fy - 7 - Math.cos(a) * r * 0.72} r="1.3" fill={c.center} opacity="0.5" />;
       })}
     </>
   );
@@ -1575,6 +1648,7 @@ export default function PlantSVG({ plant, stage, size = 240, animate = true, uku
       if (s === "hydrangea") return <HydrangeaStage2 c={c} />;
       if (s === "blossom") return <BlossomStage2 c={c} />;
       if (s === "bell") return <BellStage2 c={c} />;
+      if (s === "lily") return <LilyStage2 c={c} />;
       if (s === "trumpet") return <TrumpetStage2 c={c} />;
       if (s === "iris") return <IrisStage2 c={c} />;
       if (s === "allium") return <AlliumStage2 c={c} />;
@@ -1602,6 +1676,7 @@ export default function PlantSVG({ plant, stage, size = 240, animate = true, uku
     if (s === "hydrangea") return <HydrangeaStage3 c={c} />;
     if (s === "blossom") return <BlossomStage3 c={c} />;
     if (s === "bell") return <BellStage3 c={c} />;
+    if (s === "lily") return <LilyStage3 c={c} />;
     if (s === "trumpet") return <TrumpetStage3 c={c} />;
     if (s === "iris") return <IrisStage3 c={c} />;
     if (s === "allium") return <AlliumStage3 c={c} />;
